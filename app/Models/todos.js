@@ -10,14 +10,18 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Todos.hasOne(models.Users)
+      Todos.hasOne(models.User)
       // define association here
     }
   }
 
   Todos.init({
     title: DataTypes.STRING,
-    body: DataTypes.STRING
+    body: DataTypes.STRING,
+    color: DataTypes.STRING,
+    idUser: DataTypes.INTEGER,
+    createdAt: DataTypes.DATE,
+    updatedAt: DataTypes.DATE,
   }, {
     sequelize,
     modelName: 'Todos',
