@@ -27,7 +27,8 @@ module.exports = {
         references: {         // Todos belongsTo User 1:1
           model: 'Users',
           key: 'id'
-        }
+        },
+        allowNull: false,
       },
       createdAt: {
         allowNull: false,
