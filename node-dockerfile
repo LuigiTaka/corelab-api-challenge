@@ -1,0 +1,16 @@
+FROM node:16.15
+
+RUN mkdir -p /usr/app
+RUN mkdir -p /usr/app/cache
+
+WORKDIR /usr/app/cache
+COPY package.json .
+COPY package-lock.json .
+RUN npm install
+
+
+WORKDIR /usr/app
+
+
+COPY entrypoint.sh .
+RUN chmod u+x /usr/app/entrypoint.sh
